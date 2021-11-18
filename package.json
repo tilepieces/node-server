@@ -1,0 +1,19 @@
+{
+  "name": "@tilepieces/server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server",
+  "scripts": {
+    "test": "node tests/automated.js"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "busboy": "^0.3.1",
+    "open": "^7.0.0"
+  }
+}
