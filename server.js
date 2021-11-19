@@ -11,7 +11,7 @@ function Server(settings,basePath) {
     $self.applicationName = settings.applicationName;
     $self.basePath = basePath || process.cwd() + path.sep;
     $self.home = 'http://' + settings.server.host + ':' + settings.server.port + "/";
-    $self.API = require($self.basePath + settings.APIInterface);
+    $self.API = settings.APIInterface ? require($self.basePath + settings.APIInterface) : require("@tilepieces/node-API");
     $self.headers = Object.assign(settings.headers||{},headerBase);
     $self.mimeTypes = mimeTypes;
     $self.projectName = null;
