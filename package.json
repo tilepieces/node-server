@@ -2,7 +2,7 @@
   "name": "@tilepieces/node-server",
   "version": "1.0.0",
   "description": "",
-  "main": "server",
+  "main": "server.js",
   "scripts": {
     "test": "node tests/automated.js"
   },
