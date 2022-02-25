@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>@tilepieces/server e2e tests 3</title>
+  <meta charset="UTF-8">
+  <title>@tilepieces/server e2e tests 3</title>
 </head>
 <body>
 <h1>Welcome to @tilepieces/server e2e tests!</h1>
@@ -10,38 +10,38 @@
 <input type="file" onchange="sendFile(event)">
 <script src="createDocumentText.js"></script>
 <script>
-    var host = "http://127.0.0.1:8546/";
-    fetch(host + "?testGet")
-            .then(res=>res.text())
-            .then(res=>console.log("testGet", res));
-    var formData = new FormData(); // Currently empty
-    formData.append('path', ["an","array","!"]);
-    formData.append('foo.html', new File([createDocumentText(document)], "foo.html", {
-        type: "text/html"
-    }));
+  var host = "http://127.0.0.1:8546/";
+  fetch(host + "?testGet")
+    .then(res => res.text())
+    .then(res => console.log("testGet", res));
+  var formData = new FormData(); // Currently empty
+  formData.append('path', ["an", "array", "!"]);
+  formData.append('foo.html', new File([createDocumentText(document)], "foo.html", {
+    type: "text/html"
+  }));
 
-    fetch(host + "?testPost",{
-        method: "POST",
-        body: formData
-    }).then(async res=>{
-        var json = await res.json();
-        console.log("testPost", json)
+  fetch(host + "?testPost", {
+    method: "POST",
+    body: formData
+  }).then(async res => {
+    var json = await res.json();
+    console.log("testPost", json)
+  });
+
+  function sendFile(e) {
+    var formData = new FormData();
+    console.log(e.target.files);
+    var path = e.target.files[0].name;
+    formData.append(path, e.target.files[0]);
+    fetch(host + "?testPost", {
+      method: "POST",
+      body: formData
+    }).then(async res => {
+      var json = await res.json();
+      console.log("testPost", json);
+      top.dispatchEvent(new CustomEvent("file-loaded", {detail: path}))
     });
-
-    function sendFile(e){
-        var formData = new FormData();
-        console.log(e.target.files);
-        var path = e.target.files[0].name;
-        formData.append(path,e.target.files[0]);
-        fetch(host + "?testPost",{
-            method: "POST",
-            body: formData
-        }).then(async res=>{
-            var json = await res.json();
-            console.log("testPost", json);
-            top.dispatchEvent(new CustomEvent("file-loaded",{detail:path}))
-        });
-    }
+  }
 </script>
 </body>
 </html>

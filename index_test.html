@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>@tilepieces/server e2e tests 2</title>
+  <meta charset="UTF-8">
+  <title>@tilepieces/server e2e tests 2</title>
 </head>
 <body>
 <h1>Welcome to @tilepieces/server e2e tests!</h1>
-<h2>A project name "tilepieces" will be created. An iframe pointing to './special/serverTestProva.html' should be created</h2>
+<h2>A project name "tilepieces" will be created. An iframe pointing to './special/serverTestProva.html' should be
+  created</h2>
 <h3>Manipulate the iframe below to see file uploaded:
-    <input id="test-input"
-            onchange="this.parentNode.nextElementSibling.src='/www/tilepieces/' + this.value"></h3>
+  <input id="test-input"
+         onchange="this.parentNode.nextElementSibling.src='/www/tilepieces/' + this.value"></h3>
 <iframe src="" style="display:block;width:100%;height:250px"></iframe>
 <hr>
 <script>
-    var iframe = document.getElementsByTagName("iframe")[0];
-    fetch("/?create&projectName=tilepieces").then(async res=>{
-        console.log("create", await res.text());
-        document.body.insertAdjacentHTML("beforeend","<iframe src='./special/serverTestProva.html' style='width:100%;height:250px'></iframe>");
-    });
-    var testInput = document.getElementById("test-input");
-    window.addEventListener("file-loaded",e=>{
-        testInput.value = e.detail;
-        testInput.dispatchEvent(new Event("change"));
-    })
+  var iframe = document.getElementsByTagName("iframe")[0];
+  fetch("/?create&projectName=tilepieces").then(async res => {
+    console.log("create", await res.text());
+    document.body.insertAdjacentHTML("beforeend", "<iframe src='./special/serverTestProva.html' style='width:100%;height:250px'></iframe>");
+  });
+  var testInput = document.getElementById("test-input");
+  window.addEventListener("file-loaded", e => {
+    testInput.value = e.detail;
+    testInput.dispatchEvent(new Event("change"));
+  })
 </script>
 </body>
 </html>
