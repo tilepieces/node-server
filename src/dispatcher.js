@@ -37,8 +37,8 @@ module.exports = function (req, res) {
     return;
   }
   var urlToFind = !isWorkspaceUrl ?
-    $self.basePath + decodeURIComponent(urlWithoutQuery) :
-    serverPath + decodeURIComponent(urlWithoutQuery.replace(proxyPathWithoutSlash, "").replace(/\/\//g, "/"));
+    path.normalize($self.basePath + decodeURIComponent(urlWithoutQuery)) :
+    path.normalize(serverPath + decodeURIComponent(urlWithoutQuery.replace(proxyPathWithoutSlash, "")));
   //console.log("referer ->",referer);
   //console.log(isWorkspaceUrl,proxyPath,proxyPathWithoutSlash,urlWithoutQuery.replace(proxyPath,""));
   //console.log("mustproxy,$self.basePath,serverPath,urlToFind",mustproxy,$self.basePath,serverPath,urlToFind,urlWithoutQuery);
