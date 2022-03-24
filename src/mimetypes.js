@@ -13,6 +13,7 @@ module.exports = {
   ".svg": "image/svg+xml",
   ".webp": "image/webp",
   ".ico": "image/x-icon",
+  ".avif":"image/avif",
   ".collection": "font/collection",
   ".otf": "font/otf",
   ".sfnt": "font/sfnt",
