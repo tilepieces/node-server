@@ -56,7 +56,6 @@ module.exports = function (req, res) {
   }
   fs.access(urlToFind, fs.F_OK, (err) => {
     if (err) {
-      //res.writeHead(500, {'Content-Type': 'text/html'});
       res.writeHead(500, Object.assign({"Content-Type": "text/plain"}, $self.headers));
       res.write(urlToFind + " access error \n" + JSON.stringify(err));
       res.end();
