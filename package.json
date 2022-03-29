@@ -1,6 +1,6 @@
 {
   "name": "@tilepieces-official/node-server",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "a server project created with http.createServer to be used by the tilepieces application",
   "main": "server.js",
   "scripts": {
@@ -11,8 +11,7 @@
   ],
   "keywords": [
     "server",
-    "tilepieces",
-    "http.createServer"
+    "application"
   ],
   "author": "simone di nuovo",
   "license": "MIT",
@@ -22,7 +21,7 @@
   },
   "devDependencies": {
     "@tilepieces/node-api": "latest",
-    "busboy": "latest",
-    "open": "latest"
+    "busboy": "^1.4.0",
+    "open": "^7.0.0"
   }
 }
