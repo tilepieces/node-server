@@ -1,6 +1,6 @@
 {
   "name": "@tilepieces-official/node-server",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "a server project created with http.createServer to be used by the tilepieces application",
   "main": "server.js",
   "scripts": {

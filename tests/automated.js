@@ -6,7 +6,7 @@ const server = require("../server");
 const GET = require("./testUtils/GET");
 const zlib = require('zlib');
 const assert = require("./testUtils/assert");
-console.log("Welcome to @tilepieces/server automated test.");
+console.log("Welcome to @tilepieces-official/server automated test.");
 console.log("Be sure to have projects.json and settings.json in root. Process must start from the root. Use npm test")
 console.log("Be sure to not have another process running on port " + mockSettings.server.port, "or EADDRINUSE error will be raised");
 (async () => {
