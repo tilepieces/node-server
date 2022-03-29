@@ -1,7 +1,7 @@
 {
-  "name": "@tilepieces/node-server",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@tilepieces-official/node-server",
+  "version": "0.1.1",
+  "description": "a server project created with http.createServer to be used by the tilepieces application",
   "main": "server.js",
   "scripts": {
     "test": "node tests/automated.js"
@@ -9,12 +9,20 @@
   "files": [
     "src"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "server",
+    "tilepieces",
+    "http.createServer"
+  ],
+  "author": "simone di nuovo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tilepieces/node-server"
+  },
   "devDependencies": {
-    "@tilepieces/node-API": "file:../node-API",
-    "busboy": "^0.3.1",
-    "open": "^7.0.0"
+    "@tilepieces/node-api": "latest",
+    "busboy": "latest",
+    "open": "latest"
   }
 }
