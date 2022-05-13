@@ -13,6 +13,8 @@ function Server(settings, basePath) {
   $self.basePath = basePath || process.cwd() + path.sep;
   $self.home = 'http://' + settings.server.host + ':' + settings.server.port + "/";
   $self.API = settings.APIInterface ? require($self.basePath + settings.APIInterface) : require("@tilepieces-official/node-API");
+  if(Array.isArray(settings.API))
+    $self.API.concat(settings.API)
   $self.headers = Object.assign(settings.headers || {}, headerBase);
   $self.mimeTypes = mimeTypes;
   $self.projectName = null;
