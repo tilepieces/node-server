@@ -1,6 +1,6 @@
 {
   "name": "@tilepieces-official/node-server",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "a server project created with http.createServer to be used by the tilepieces application",
   "main": "server.js",
   "scripts": {
@@ -20,8 +20,7 @@
     "url": "https://github.com/tilepieces/node-server"
   },
   "devDependencies": {
-    "@tilepieces/node-api": "latest",
-    "busboy": "^1.4.0",
+    "busboy": "^1.6.0",
     "open": "^7.0.0"
   }
 }

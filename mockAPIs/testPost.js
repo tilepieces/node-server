@@ -4,7 +4,7 @@ module.exports = function (req, res, $self) {
   var {method, url} = req;
   var rootPath = $self.serverPath;
   console.log("[testPost] ", method, url);
-  var busboy = new Busboy({headers: req.headers});
+  var busboy =  Busboy({headers: req.headers});
   var fields = [];
   var fileArray = [];
   busboy.on('file', function (fieldname, file, filename, encoding, mimetype) {
